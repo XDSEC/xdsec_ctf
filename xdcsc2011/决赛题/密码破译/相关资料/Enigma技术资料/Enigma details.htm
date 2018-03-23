@@ -1,0 +1,891 @@
+
+<!-- saved from url=(0054)http://users.telenet.be/d.rijmenants/en/enigmatech.htm -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+
+<meta name="description" content="Technical details of the Enigma cipher machine. How it works and what&#39;s inside.">
+<meta name="keywords" content="cipher machines, enigma, enigma code machine, enigma machine, how enigma works">
+<meta name="GENERATOR" content="Microsoft FrontPage Express 2.0">
+<title>Enigma details</title>
+<link rel="stylesheet" type="text/css" href="./Enigma details_files/standaard.css">
+</head>
+
+<body background="./Enigma details_files/back4.gif" bgcolor="#FFFFFF">
+<div align="center"><center>
+
+<table border="0" cellpadding="10" cellspacing="0" width="950" background="./Enigma details_files/back5.gif">
+    <tbody><tr>
+        <td><table border="1" cellpadding="0" cellspacing="0" width="100%" bordercolor="#FFFFFF" bordercolordark="#FFFFFF" bordercolorlight="#FFFFFF">
+            <tbody><tr>
+                <td width="100%" background="./Enigma details_files/backheader.jpg" bordercolor="#000000" bordercolordark="#000000" bordercolorlight="#000000"><font color="#808080" size="1"><br>
+                <br>
+                </font><font color="#000000" size="5"><strong>&nbsp;&nbsp;</strong></font>
+                <font color="#000000" size="5"><strong>Technical
+                Details of the Enigma Machine </strong></font><a href="http://users.telenet.be/d.rijmenants/nl/enigmatech.htm"><font color="#808080" size="1">Deze pagina in het Nederlands</font></a><font color="#808080" size="1"> <!--webbot
+                bot="HTMLMarkup" startspan --><img src="./Enigma details_files/yaac" style="visibility:hidden"><!--webbot
+                bot="HTMLMarkup" endspan --><br>
+                <br>
+                <br>
+                </font><table border="0" cellpadding="2" cellspacing="0" width="100%">
+                    <tbody><tr>
+                        <td width="100%" bgcolor="#808080"><a href="http://users.telenet.be/d.rijmenants/index.htm" class="menu">Home</a>
+                        <a href="http://users.telenet.be/d.rijmenants/en/enigmamenu.htm" class="menu">Menu</a>
+                        <a href="http://users.telenet.be/d.rijmenants/en/enigma.htm" class="menu">History</a>
+                        <a href="http://users.telenet.be/d.rijmenants/en/enigmaproc.htm" class="menu">Procedures</a>
+                        <a href="./Enigma details_files/Enigma details.htm" class="menu">Technical
+                        details</a> <a href="http://users.telenet.be/d.rijmenants/en/enigmasim.htm" class="menu">Enigma
+                        Simulator</a></td>
+                    </tr>
+                </tbody></table>
+                </td>
+            </tr>
+        </tbody></table>
+        <h4><font size="2"><br>
+        </font></h4>
+        <table border="0" cellpadding="2" cellspacing="1" width="100%">
+            <tbody><tr>
+                <td valign="top"><font size="2">This page
+                provides the technical details of the Wehrmacht
+                and Luftwaffe Enigma, and the Kriegsmarine Enigma
+                M4. You can view all images in a higher
+                resolution by clicking them.</font><h4><font size="2">Content</font></h4>
+                <ul>
+                    <li><a href="http://users.telenet.be/d.rijmenants/en/enigmatech.htm#wiringdiagram"><font size="2">Wiring
+                        Diagram</font></a></li>
+                    <li><a href="http://users.telenet.be/d.rijmenants/en/enigmatech.htm#rotors"><font size="2">The
+                        Rotors</font></a></li>
+                    <li><a href="http://users.telenet.be/d.rijmenants/en/enigmatech.htm#reflector"><font size="2">The
+                        Reflector</font></a></li>
+                    <li><a href="http://users.telenet.be/d.rijmenants/en/enigmatech.htm#wiringtables"><font size="2">Rotor
+                        Wiring Tables</font></a></li>
+                    <li><a href="http://users.telenet.be/d.rijmenants/en/enigmatech.htm#steppingmechanism"><font size="2">The Stepping Mechanism</font></a></li>
+                    <li><a href="http://users.telenet.be/d.rijmenants/en/enigmatech.htm#plugboard"><font size="2">The
+                        Plugboard</font></a></li>
+                    <li><a href="http://users.telenet.be/d.rijmenants/en/enigmatech.htm#accessories"><font size="2">Accessories</font></a></li>
+                    <li><a href="http://users.telenet.be/d.rijmenants/en/enigmatech.htm#maths"><font size="2">Mathematical
+                        Security</font></a></li>
+                </ul>
+                </td>
+                <td align="right" valign="top"><table border="0" cellpadding="10" cellspacing="0">
+                    <tbody><tr>
+                        <td align="right" bgcolor="#808080"><p align="center"><a href="http://users.telenet.be/d.rijmenants/pics/hires-wehr3.jpg"><img src="./Enigma details_files/wehr3.jpg" alt="Image © D Rijmenants 2008" border="0" width="258" height="357"></a></p>
+                        <p align="center"><font color="#FFFFFF" size="2">Wehrmacht Enigma</font></p>
+                        </td>
+                    </tr>
+                </tbody></table>
+                </td>
+                <td><table border="0" cellpadding="10" cellspacing="0">
+                    <tbody><tr>
+                        <td align="right" bgcolor="#808080"><p align="center"><a href="http://users.telenet.be/d.rijmenants/pics/hires-m4.jpg"><img src="./Enigma details_files/m4.jpg" alt="Image © D Rijmenants 2008" border="0" width="172" height="357"></a></p>
+                        <p align="center"><font color="#FFFFFF" size="2">Enigma M4</font></p>
+                        </td>
+                    </tr>
+                </tbody></table>
+                </td>
+            </tr>
+        </tbody></table>
+        <h4><font size="2"><!--webbot bot="HTMLMarkup" startspan --><a name="wiringdiagram"></a> 
+
+<!--webbot
+        bot="HTMLMarkup" endspan -->Wiring Diagram </font><a href="http://users.telenet.be/d.rijmenants/en/enigmatech.htm#top"><font size="2"><img src="./Enigma details_files/up1.gif" alt="Top" border="0" width="12" height="9"></font></a></h4>
+        <p><font size="2">The Enigma machine is an
+        electro-mechanical device. It consists of a keyboard
+        (German QWERTZ layout), a lamp panel, representing the
+        alphabet, and three or four rotors. These rotors advance
+        each time a key is depressed. Pressing a key is
+        translated, by rotors and plugboard, into a burning lamp,
+        representing the encoded letter. There is a compartment
+        for a 4 volt battery in the machine and a plug to connect
+        the machine to an exterior power supply or transformer
+        type AC power supply.</font></p>
+        <table border="0" cellpadding="5" cellspacing="1">
+            <tbody><tr>
+                <td valign="top"><font size="2"><img src="./Enigma details_files/wiring.jpg" alt="Wiring Diagram, drawing © Dirk Rijmenants" align="left" border="1" hspace="5" width="290" height="381"></font></td>
+                <td valign="top" width="300"><table border="0" cellpadding="10" cellspacing="0">
+                    <tbody><tr>
+                        <td bgcolor="#808080"><p align="center"><a href="http://users.telenet.be/d.rijmenants/pics/hires-wehrinside.jpg"><img src="./Enigma details_files/wehrinside.jpg" alt="Image © D Rijmenants 2008" border="0" width="402" height="266"></a></p>
+                        <p align="left"><font color="#FFFFFF" size="2">A Wehrmacht Enigma with open
+                        cover. From left to right: the B
+                        reflector, the three rotors, the entry
+                        rotor (black) and the battery box. Right
+                        below the battery box the power switch
+                        contacts. On the second row of lamps on
+                        the left side there's a spare lamp and
+                        the hole on the right is to test lamps.</font></p>
+                        </td>
+                    </tr>
+                </tbody></table>
+                </td>
+            </tr>
+        </tbody></table>
+        <p><font size="2">The picture above shows the wiring. To
+        simplify the example, only four of each of the components
+        are shown. In reality, there are 26 lamps, keys,
+        plugboard sockets and wiring connections inside the
+        rotors. The current flows from the battery [1] through
+        the depressed bi-directional letter-switch [2] to the
+        plugboard [3]. The plugboard allows rewiring the
+        connections between keyboard [2] and fixed entry wheel
+        [4]. Next, the current proceeds through the - unused, and
+        therefore closed - socket [3] via the entry wheel [4]
+        through the cross-wirings of the three (Wehrmacht Enigma)
+        or four (Kriegmarine M4) rotors [5] and enters the
+        reflector [6]. The reflector returns the current, via a
+        different path, back through the rotors [5] and entry
+        wheel [4], and proceeds through the plugboard again and
+        through the plug 'S' connected with a cable [8] to plug
+        'D', and another bi-directional switch [9] to light-up
+        the lamp. Note that depressing a key will first step the
+        rotors and then the sent the current through the rotors
+        en the light bulb. If the key is released the lamp will
+        no longer light up. Therefore, when no key is depressed,
+        the rotor position of the <em>previous</em> encrypted
+        letter is visible!</font></p>
+        <p><font size="2">The picture below shows the mechanical
+        setup of the Enigma, seen from the right side, with more
+        or less the same wiring diagram as above.</font></p>
+        <p><img src="./Enigma details_files/enigmaplan.jpg" alt="Inside Enigma, drawing © Dirk Rijmenants" border="1" width="650" height="258"></p>
+        <h4><font size="2"><br>
+        <!--webbot bot="HTMLMarkup" startspan --><a name="rotors"></a> 
+
+<!--webbot
+        bot="HTMLMarkup" endspan -->The Rotors </font><a href="http://users.telenet.be/d.rijmenants/en/enigmatech.htm#top"><font size="2"><img src="./Enigma details_files/up1.gif" alt="Top" border="0" width="12" height="9"></font></a></h4>
+        <p><font size="2"><img src="./Enigma details_files/enigmarotorintern.jpg" alt="Source: Wikipedia Commons GNU - Enigma rotor exploded view. Image by Eric Piercing" align="left" border="1" hspace="5" width="302" height="360"></font><font size="2">The rotors (Walzen in
+        German) are the most important elements of the machine.
+        These round disks [9], approximately 4 inch in diameter,
+        are made from metal or bakelite and have a core with 26
+        spring-loaded contacts [6] on the right side, scramble
+        wired [5] to 26 flat contacts [4] on the left side, with
+        a hollow axle in the center [8]. On the outside of the
+        wiring core there's a movable ring [3] with 26 numbers or
+        letters and a notch [1]. This ring is rotatable and is
+        locked with a sprinloaded pin (Wehrmacht) [7] or two
+        springloaded arcs (Kriegmarine) into any of the 26
+        positions. Changing the position of the ring will change
+        the position of the notch and alphabet, relative to the
+        internal wiring. This setting is called the ring setting
+        or Ringstellung and its position is visible by a dot
+        marking [2]. Each rotor has on its left a notch [1] and
+        on its right a ratchet [10]. These are used by the
+        stepping mechanism to advance the rotors. The internal
+        wiring is different for each rotor. This wiring
+        represents a substitution encryption. The combination of
+        several rotors, in ever-changing positions relative to
+        each other, is what makes the encryption so complex.</font></p>
+        <p><font size="2">Initially the Enigma machine came with
+        three rotors. In 1939 the set was extended to five rotors
+        to select from, marked with Roman numerals I, II, III, IV
+        and V, all with a single notch. The Kriegmarine extended
+        the set of rotors with another three rotors called VI,
+        VII and VIII, each with two notches. In 1942, the
+        Kriegsmarine M4 introduced a fourth rotor. To achieve
+        this, the wide B or C reflector from the three rotor
+        version was replaced by thin B or C reflector, leaving
+        room for the special fourth rotor. The fourth rotors were
+        of two configurations, named Beta and Gamma, with
+        spring-loaded contacts on both sides. They were
+        incompatible with the other eight rotors. The fourth
+        rotor never stepped because the M4 used the same stepping
+        mechanism as the three-rotor version and therefore had no
+        fourth pawl to advance the rotor. The operator however
+        could set the rotor manually in one of the 26 positions.<br clear="all">
+        </font></p>
+        <table border="0" cellpadding="4" cellspacing="0">
+            <tbody><tr>
+                <td valign="top"><table border="0" cellpadding="10" cellspacing="0">
+                    <tbody><tr>
+                        <td valign="top" bgcolor="#808080"><p align="center"><a href="http://users.telenet.be/d.rijmenants/pics/hires-wehr3rotors.jpg"><img src="./Enigma details_files/wehr3rotors.jpg" alt="Image © D Rijmenants 2008" border="0" width="232" height="215"></a></p>
+                        <p align="center"><font color="#FFFFFF" size="2">The three rotors on their shaft</font></p>
+                        </td>
+                    </tr>
+                </tbody></table>
+                </td>
+                <td valign="top"><table border="0" cellpadding="10" cellspacing="0">
+                    <tbody><tr>
+                        <td valign="top" bgcolor="#808080"><p align="center"><a href="http://users.telenet.be/d.rijmenants/pics/hires-wehrrotor1.jpg"><img src="./Enigma details_files/wehrrotor1.jpg" alt="Image © D Rijmenants 2008" border="0" width="220" height="215"></a></p>
+                        <p align="center"><font color="#FFFFFF" size="2">Left view of rotor with notch
+                        (left)</font></p>
+                        </td>
+                    </tr>
+                </tbody></table>
+                </td>
+                <td valign="top"><table border="0" cellpadding="10" cellspacing="0">
+                    <tbody><tr>
+                        <td valign="top" bgcolor="#808080"><p align="center"><a href="http://users.telenet.be/d.rijmenants/pics/hires-wehrrotor2.jpg"><img src="./Enigma details_files/wehrrotor2.jpg" alt="Image © D Rijmenants 2008" border="0" width="217" height="216"></a></p>
+                        <p align="center"><font color="#FFFFFF" size="2">Right view of rotor with ratchet</font></p>
+                        </td>
+                    </tr>
+                </tbody></table>
+                </td>
+            </tr>
+        </tbody></table>
+        <table border="0" cellpadding="4" cellspacing="0">
+            <tbody><tr>
+                <td valign="top"><table border="0" cellpadding="10" cellspacing="0">
+                    <tbody><tr>
+                        <td valign="top" bgcolor="#808080"><p align="center"><a href="http://users.telenet.be/d.rijmenants/pics/hires-kriegsmarinerotor.jpg"><img src="./Enigma details_files/kriegsmarinerotor.jpg" alt="Image © D Rijmenants 2008" border="0" width="224" height="222"></a></p>
+                        <p align="center"><font color="#FFFFFF" size="2">Kriegsmarine rotor with two
+                        notches<br>
+                        (click to enlarge)</font></p>
+                        </td>
+                    </tr>
+                </tbody></table>
+                </td>
+                <td valign="top"><table border="0" cellpadding="10" cellspacing="0">
+                    <tbody><tr>
+                        <td valign="top" bgcolor="#808080"><p align="center"><img src="./Enigma details_files/wehr-ring.jpg" alt="Image © D Rijmenants 2008" width="142" height="222"></p>
+                        <p align="center"><font color="#FFFFFF" size="2">Wehrmacht<br>
+                        ring locking with pin</font></p>
+                        </td>
+                    </tr>
+                </tbody></table>
+                </td>
+                <td valign="top"><table border="0" cellpadding="10" cellspacing="0">
+                    <tbody><tr>
+                        <td valign="top" bgcolor="#808080"><p align="center"><img src="./Enigma details_files/kriegs-ring.jpg" alt="Image © D Rijmenants 2008" width="141" height="221"></p>
+                        <p align="center"><font color="#FFFFFF" size="2">Kriegsmarine<br>
+                        ring locking with arcs</font></p>
+                        </td>
+                    </tr>
+                </tbody></table>
+                </td>
+            </tr>
+        </tbody></table>
+        <table border="0" cellpadding="0" cellspacing="1">
+            <tbody><tr>
+                <td valign="top"><h4><font size="2"><br>
+                <!--webbot bot="HTMLMarkup" startspan --><a name="reflector"></a> 
+
+<!--webbot
+                bot="HTMLMarkup" endspan -->The reflector </font><a href="http://users.telenet.be/d.rijmenants/en/enigmatech.htm#top"><font size="2"><img src="./Enigma details_files/up1.gif" alt="Top" border="0" width="12" height="9"></font></a></h4>
+                <p><font size="2">The reflector, Umkehrwalze or
+                UKW in German, is a unique feature of the Enigma
+                machine. On the internal wiring of all movable
+                rotors, each letter can be wired with any other
+                letter. An 'A' could be wired to 'F', where the
+                'F' is wired to 'K'. In the reflector, the
+                connections are made in pairs. If the 'A' is
+                wired to the 'F', this means the 'F' is also
+                wired to the 'A', resulting in a reciprocal
+                encryption. The advantage for the operator is
+                clear. Encryption and decryption is possible with
+                the same machine setting and wiring.
+                Unfortunately, a letter can never be encrypted
+                into itself, and this feature opened the door to
+                cryptanalysis, making the job easier to the
+                codebreakers.</font></p>
+                <p><font size="2">During the Second World War two
+                types of reflector, B and C, were used. Both had
+                26 spring-loaded contacts on the right side. The
+                four-rotor Kriegsmarine Enigmas used special thin
+                reflectors, also called B and C, but with wiring
+                that was different from the wiring of the
+                three-rotor Wehrmacht and Luftwaffe reflectors.
+                However, if the thin Kriegsmarine reflector B was
+                used together with the fourth Beta rotor in
+                A-position and A-ringsetting or the C reflector
+                with Gamme rotor, these reflectors were
+                compatible with the three-rotor versions,
+                enabling communication between different machine
+                types. The thin reflectors had flats contacts and
+                were used in combination with the special fourth
+                Beta or Gamma rotors with spring-loaded contacts
+                on both sides. In the final days of the war, a
+                special type D reflector was introduced. It was
+                an adjustable reflector with 12 wires and 24
+                plugs. The 13th wire was a fixed connection.</font></p>
+                </td>
+                <td valign="top"><br>
+                <br>
+                <table border="0" cellpadding="10" cellspacing="0">
+                    <tbody><tr>
+                        <td bgcolor="#808080"><p align="center"><a href="http://users.telenet.be/d.rijmenants/pics/hires-wehrukw.jpg"><img src="./Enigma details_files/wehrukw.jpg" alt="Image © D Rijmenants 2008" border="0" width="290" height="186"></a></p>
+                        <p align="left"><font color="#FFFFFF" size="2">The B reflector of the Wehrmacht
+                        Enigma</font></p>
+                        </td>
+                    </tr>
+                </tbody></table>
+                </td>
+            </tr>
+        </tbody></table>
+        <table border="0" cellpadding="0" cellspacing="1">
+            <tbody><tr>
+                <td valign="top"><h4><font size="2"><br>
+                <!--webbot bot="HTMLMarkup" startspan --><a name="wiringtables"></a> 
+
+<!--webbot
+                bot="HTMLMarkup" endspan -->Rotor Wiring Tables </font><a href="http://users.telenet.be/d.rijmenants/en/enigmatech.htm#top"><font size="2"><img src="./Enigma details_files/up1.gif" alt="Top" border="0" width="12" height="9"></font></a></h4>
+                <p><font size="2">As an example of how the
+                rotor's internal wiring works as a substitution
+                cipher, let us take rotor type I without any
+                ringsetting offset. The input is on the right
+                side of the rotor, seen from in front of the
+                Enigma! You can see that an 'A' is encoded as an
+                'E', a 'B' encoded as a K, and a 'K' is encoded
+                as an 'N'. Notice that every letter is encoded
+                into another. Note that after passings the
+                reflector, the current will go back through all
+                rotors in opposite direction and via another
+                path.</font></p>
+                <p><font size="2">The ring setting or
+                'ringstellung' is the position of the internal
+                wiring relative to the alphabet and notch. A
+                rotor consists of two main parts. First we have
+                the outer ring with the alphabet and notch.
+                Secondly there's the core with the internal
+                wiring, the actual encryption. Changing the
+                ringsetting will therefore change the positions
+                of the core wirings, relative to the
+                turnover-point and visible position of the rotor.
+                Where rotor I in the A-position normally encodes
+                an 'A' into an 'E', with a ring setting offset
+                'B' (02), the wiring is changed one position (to
+                the left in the table), an 'A' will be encoded
+                into 'K'. On the rotors, the 'ringstellung' is
+                marked with a dot on the rotatable wiring core.
+                When changing the ring setting one position, the
+                turnover point of a rotor will still be at the
+                same rotor letter, because the notch is fixed to
+                the alphabet ring. The encryption however is
+                shifted one position.</font></p>
+                <p><font size="2">Default rotors for Wehrmacht,
+                Luftwaffe and Kriegsmarine:</font></p>
+                <table border="1" cellpadding="3" cellspacing="0" bgcolor="#FFFFCC">
+                    <tbody><tr>
+                        <td><pre><font size="2">
+Input = ABCDEFGHIJKLMNOPQRSTUVWXYZ (rotor right side)
+        ||||||||||||||||||||||||||
+I     = EKMFLGDQVZNTOWYHXUSPAIBRCJ
+II    = AJDKSIRUXBLHWTMCQGZNPYFVOE
+III   = BDFHJLCPRTXVZNYEIWGAKMUSQO
+IV    = ESOVPZJAYQUIRHXLNFTGKDCMWB
+V     = VZBRGITYUPSDNHLXAWMJQOFECK</font></pre>
+                        </td>
+                    </tr>
+                </tbody></table>
+                <p><font size="2">Additional rotors used by
+                Kriegsmarine M3 and M4 only:</font></p>
+                <table border="1" cellpadding="3" cellspacing="0" bgcolor="#FFFFCC">
+                    <tbody><tr>
+                        <td><pre><font size="2">
+Input = ABCDEFGHIJKLMNOPQRSTUVWXYZ (rotor right side)
+        ||||||||||||||||||||||||||
+VI    = JPGVOUMFYQBENHZRDKASXLICTW
+VII   = NZJHGRCXMYSWBOUFAIVLPEKQDT
+VIII  = FKQHTLXOCBJSPDZRAMEWNIUYGV</font></pre>
+                        </td>
+                    </tr>
+                </tbody></table>
+                <p><font size="2">The special fourth rotors, also
+                called Zusatzwalzen or Greek rotors. Used on the
+                Kriegsmarine M4 with thin reflectors only:</font></p>
+                <table border="1" cellpadding="3" cellspacing="0" bgcolor="#FFFFCC">
+                    <tbody><tr>
+                        <td><pre><font size="2">
+Input = ABCDEFGHIJKLMNOPQRSTUVWXYZ (rotor right side)
+        ||||||||||||||||||||||||||
+Beta  = LEYJVCNIXWPBQMDRTAKZGFUHOS
+Gamma = FSOKANUERHMBTIYCWLQPZXVGJD</font></pre>
+                        </td>
+                    </tr>
+                </tbody></table>
+                <p><font size="2">In the reflector wiring table
+                we can see that the wide B reflector an 'A'
+                returns as 'Y' and 'Y' returns as 'A'. Notice
+                that the wirings are permanently connected as a
+                loop between two letters.</font></p>
+                <p><font size="2">Default wide reflectors
+                Wehrmacht and Luftwaffe:</font></p>
+                <table border="1" cellpadding="3" cellspacing="0" bgcolor="#FFFFCC">
+                    <tbody><tr>
+                        <td><pre><font size="2">
+Contacts    = ABCDEFGHIJKLMNOPQRSTUVWXYZ             
+              ||||||||||||||||||||||||||
+Reflector B = YRUHQSLDPXNGOKMIEBFZCWVJAT
+Reflector C = FVPJIAOYEDRZXWGCTKUQSBNMHL</font></pre>
+                        </td>
+                    </tr>
+                </tbody></table>
+                <p><font size="2">Thin reflectors, Kriegsmarine
+                M4 only:</font></p>
+                <table border="1" cellpadding="3" cellspacing="0" bgcolor="#FFFFCC">
+                    <tbody><tr>
+                        <td><pre><font size="2">
+Contacts         = ABCDEFGHIJKLMNOPQRSTUVWXYZ        
+                   ||||||||||||||||||||||||||
+Reflector B Thin = ENKQAUYWJICOPBLMDXZVFTHRGS
+Reflector C Thin = RDOBJNTKVEHMLFCWZAXGYIPSUQ</font></pre>
+                        </td>
+                    </tr>
+                </tbody></table>
+                <p><font size="2">The wirings as described here,
+                are for the rotors for Wehrmacht, Luftwaffe and
+                Kriegsmarine Enigma's only. The rotors for other
+                versions of the Enigma machine had other internal
+                wirings.</font></p>
+                </td>
+                <td valign="top"><br>
+                <br>
+                <table border="0" cellpadding="10" cellspacing="0">
+                    <tbody><tr>
+                        <td bgcolor="#808080"><p align="center"><a href="http://users.telenet.be/d.rijmenants/pics/hires-m4ukwbeta2.jpg"><img src="./Enigma details_files/m4ukwbeta2.jpg" alt="Image © D Rijmenants 2008" border="0" width="290" height="216"></a></p>
+                        <p align="left"><font color="#FFFFFF" size="2">Naval Beta rotor and thin
+                        reflector</font></p>
+                        </td>
+                    </tr>
+                </tbody></table>
+                <p><br>
+                </p>
+                </td>
+            </tr>
+        </tbody></table>
+        <table border="0" cellpadding="0" cellspacing="1">
+            <tbody><tr>
+                <td valign="top"><h4><font size="2"><br>
+                <!--webbot bot="HTMLMarkup" startspan --><a name="steppingmechanism"></a> 
+
+<!--webbot
+                bot="HTMLMarkup" endspan -->The stepping
+                mechanism </font><a href="http://users.telenet.be/d.rijmenants/en/enigmatech.htm#top"><font size="2"><img src="./Enigma details_files/up1.gif" alt="Top" border="0" width="12" height="9"></font></a></h4>
+                <p><font size="2">Each time a key is depressed,
+                the position of the rotors is changed. This
+                results in a different substitution encryption
+                each time for the same given letter. The first
+                rotor, on the right side, steps on each depressed
+                key. The middle rotor advances once on every 26
+                advances of the first rotor. The third, slowest,
+                rotor, on every 26 advances of the middle rotor.</font></p>
+                <p><font size="2">Depressing a key will move the
+                stepping bar [1] downwards and the pawl axle [2]
+                and its three spring-loaded pawls [3] upwards. If
+                the pawl axle [2] is raised the pawls move
+                towards the rotors. Each pawl is placed both over
+                the notch ring of the rotor to its right, and the
+                ratchet of the rotor to its left. If a rotor is
+                in its notch position, its pawl can move into
+                that notch and push into the ratchet of the next
+                left rotor, moving that rotor one step further.
+                If the rotor on its right is not in the notch
+                position the pawl slides over the notch ring of
+                the right side rotor and will be unable to grab
+                into the ratchet. Since there is no rotor on the
+                right side of the first rotor, the right most
+                pawl will engage the first rotor on every
+                depressing of a key. If no key is pressed, the
+                pawl axle [2] forces the pawls [3] against pads
+                on the bottom of the machine, pushing the pawls
+                away from the rotors. This enables the operator
+                to move the rotors freely by hand in both
+                directions.</font></p>
+                <p><img src="./Enigma details_files/stepping.jpg" alt="Stepping Mechanism, drawing by Dirk Rijmenants" border="1" width="551" height="200"></p>
+                <p><font size="2">The position of the notch is
+                different for each of the rotors. In the table
+                below we can see that rotor I has a notch on
+                letter Y. If this notch is positioned in front of
+                the pawl, the letter Q is visible in the little
+                window. Therefore, the rotor to the left of rotor
+                I will step if rotor I steps from Q to R
+                (cryptanalists used the mnemonic <u>R</u>oyal <u>F</u>lags
+                <u>W</u>ave <u>K</u>ings <u>A</u>bove to remember
+                the positions of the rotors after turnover).
+                Notice that the Kriegsmarine rotors VI, VII and
+                VIII have two notches. This advances the rotor to
+                their left twice as fast as the other rotors.</font></p>
+                <table border="1" cellpadding="3" cellspacing="0" bgcolor="#FFFFCA">
+                    <tbody><tr>
+                        <td valign="top"><font size="2">Rotor</font></td>
+                        <td valign="top" bgcolor="#FFFFD2"><font size="2">Notch</font></td>
+                        <td valign="top"><font size="2">Window</font></td>
+                        <td><font size="2">next left rotor steps
+                        when rotor steps from/to </font></td>
+                    </tr>
+                    <tr>
+                        <td valign="top"><pre><font size="2">I
+II
+III
+IV
+V
+VI VII VIII </font></pre>
+                        </td>
+                        <td valign="top"><pre><font size="2">Y
+M
+D
+R
+H
+H + U</font></pre>
+                        </td>
+                        <td valign="top"><pre><font size="2">Q
+E
+V
+J
+Z
+Z and M</font></pre>
+                        </td>
+                        <td valign="top"><pre><font size="2">Q -&gt; R
+E -&gt; F
+V -&gt; W
+J -&gt; K
+Z -&gt; A
+Z -&gt; A and M -&gt; N</font></pre>
+                        </td>
+                    </tr>
+                </tbody></table>
+                </td>
+                <td valign="top" width="300"><br>
+                <br>
+                <table border="0" cellpadding="10" cellspacing="0">
+                    <tbody><tr>
+                        <td bgcolor="#808080"><p align="center"><a href="http://users.telenet.be/d.rijmenants/pics/hires-wehrentry.jpg"><img src="./Enigma details_files/wehrentry.jpg" alt="Image © D Rijmenants 2008" border="0" width="323" height="215"></a></p>
+                        <p align="left"><font color="#FFFFFF" size="2">The three pawls on their axle,
+                        resting on the pads. The pawl axle is
+                        fixed to the stepping bar (silver L
+                        shape). At the right of the pawls you can
+                        see the fixed entry rotor.</font></p>
+                        </td>
+                    </tr>
+                </tbody></table>
+                <p><br>
+                </p>
+                <table border="0" cellpadding="10" cellspacing="0">
+                    <tbody><tr>
+                        <td bgcolor="#808080"><p align="center"><a href="http://users.telenet.be/d.rijmenants/pics/hires-gmechanism.jpg"><img src="./Enigma details_files/gmechanism.jpg" alt="Image © D Rijmenants 2008" border="0" width="323" height="214"></a></p>
+                        <p align="left"><font color="#FFFFFF" size="2">Gear type advance mechanisme of
+                        the rare predecessor of the Enigma G.
+                        Notice the normal rotor contact placement
+                        instead of the later Enigma G rotors with
+                        special zigzag placed contacts.</font></p>
+                        </td>
+                    </tr>
+                </tbody></table>
+                </td>
+            </tr>
+        </tbody></table>
+        <p><font size="2"><strong>Important note on the Stepping
+        Sequence</strong>: Although the stepping mechanism seems
+        to work as a normal odometer, there is an important
+        difference. The middle rotor steps not only when the
+        right rotor is in its notch position, but also on its own
+        notch position. An example sequence of a double step:
+        KDO, KDP, KDQ, KER, LFS, LFT (used rotors are, from left
+        to right, III,II,I). This double stepping causes the
+        rotors to deviate from a normal odometer. A double step
+        occurs as follows: The first (right) rotor is in its
+        notch position, and when a key is depressed it will step
+        and push the second (middle) rotor one step further. If
+        the second rotor has moved by this step into its own
+        notch position, the third pawl can move on the next step
+        into the ratchet of the third (left) rotor. With this
+        next step, the third pawl pushes the ratchet of the third
+        (left) rotor and advances it, but will also push into the
+        second rotor's own notch, advancing the second rotor a
+        second time in a row. </font></p>
+        <p><font size="2">The stepping mechanism, as explained
+        above, is used on the Wehrmacht and Kriegsmarine Enigma.
+        The four-rotor Kriegsmarine M4 is derived from the three
+        rotor version without changing the rotor advance
+        mechanism or adding a fourth pawl. Therefore the fourth
+        rotor doesn't move and can only be adjusted manually. The
+        Enigma-G, used by the Abwehr (German Intelligence) has a
+        different mechanism. The Enigma-G has a rotating
+        reflector and three rotors with multiple notches, rotated
+        by a gear box.</font></p>
+        <table border="0" cellpadding="0" cellspacing="1">
+            <tbody><tr>
+                <td valign="top"><h4><font size="2"><br>
+                <!--webbot bot="HTMLMarkup" startspan --><a name="plugboard"></a> 
+
+<!--webbot
+                bot="HTMLMarkup" endspan -->The Plugboard </font><a href="http://users.telenet.be/d.rijmenants/en/enigmatech.htm#top"><font size="2"><img src="./Enigma details_files/up1.gif" alt="Top" border="0" width="12" height="9"></font></a></h4>
+                <p><font size="2">In 1930, the plugboard or
+                Steckerbrett was introduced on the first
+                Wehrmacht Enigma version. The plugboard is
+                situated on the front of the machine. Without an
+                inserted plug, the current flows from the
+                switches, controlled by the keyboard, directly to
+                the entry rotor. Inserting a cable results in
+                swapping the two involved letters before
+                proceeding to the entry rotor. Each machine was
+                by default equipped with a set of 10 cables. The
+                plugbord was an important improvement of the
+                machines encryption strength.</font></p>
+                <p><font size="2">Each letter has two jacks.
+                Inserting a plug disconnects the upper jack,
+                connected to the keyboard, and the lower jack,
+                connected to the entry wheel. The other end of
+                the cross-wired cable is inserted into another
+                letter's jack, swapping the connections of the
+                two letters. The current passes through the
+                plugboard once on its way to the rotors and
+                another time on its way to the light bulbs.</font></p>
+                <h4><font size="2"><br>
+                <!--webbot bot="HTMLMarkup" startspan --><a name="accessories"></a> 
+
+<!--webbot
+                bot="HTMLMarkup" endspan -->Accessories </font><a href="http://users.telenet.be/d.rijmenants/en/enigmatech.htm#top"><font size="2"><img src="./Enigma details_files/up1.gif" alt="Top" border="0" width="12" height="9"></font></a></h4>
+                <p><font size="2">A handy feature, used on the
+                Kriegsmarine Enigma was the Schreibmax. This
+                little printer could print the alphabet on a
+                small paper ribbon. This excluded the need for a
+                second operator, reading the lamps and writing
+                the letters down. The Schreibmax was placed on
+                top of the Enigma machine and was connected to
+                the lamp panel; to install the printer, the lamp
+                cover and all light bulbs had to be removed.</font></p>
+                <p><font size="2">Another accessory was the
+                remote lamp panel. If the machine was equipped
+                with an extra panel, the wooden case of the
+                Enigma was wider and could store the extra panel.
+                There was a lamp panel version that could be
+                connected afterwards, but that required, just as
+                with the Schreibmax, the lamp panel and light
+                bulbs to be removed. The remote panel made it
+                possible for a person to read the decrypted text,
+                without giving the operator access to it.</font></p>
+                <p><font size="2">In 1944, the Luftwaffe
+                introduced an extra plugboard switch, called the
+                Uhr (clock). The Uhr was a little box, containing
+                a switch with 40 positions. It replaced the
+                default plug cables. After connecting the plugs,
+                as determined in the daily key sheet, the
+                operator could turn the switch to one of the 40
+                positions, each position resulting in a different
+                combination of plug wiring. Most of these cable
+                connections are, unlike the default cables, not
+                pair-wise.</font></p>
+                </td>
+                <td valign="top"><br>
+                <br>
+                <table border="0" cellpadding="10" cellspacing="0">
+                    <tbody><tr>
+                        <td bgcolor="#808080"><p align="center"><a href="http://users.telenet.be/d.rijmenants/pics/hires-wehrplugs.jpg"><img src="./Enigma details_files/wehrplugs.jpg" alt="Image © D Rijmenants 2008" border="0" width="399" height="222"></a></p>
+                        <p align="center"><font color="#FFFFFF" size="2">The plugboard of a Wehrmacht
+                        Enigma</font></p>
+                        </td>
+                    </tr>
+                </tbody></table>
+                <p><br>
+                </p>
+                <table border="0" cellpadding="10" cellspacing="0">
+                    <tbody><tr>
+                        <td bgcolor="#808080"><p align="center"><a href="http://users.telenet.be/d.rijmenants/pics/hires-uhr.jpg"><img src="./Enigma details_files/uhr.jpg" alt="Image © D Rijmenants 2008" border="0" width="401" height="316"></a></p>
+                        <p align="center"><font color="#FFFFFF" size="2">The Uhr with its cables that
+                        replace the normal wiring cables</font></p>
+                        </td>
+                    </tr>
+                </tbody></table>
+                <p><br>
+                <br>
+                </p>
+                </td>
+            </tr>
+        </tbody></table>
+        <h4><!--webbot bot="HTMLMarkup" startspan --><a name="maths"></a> 
+
+<!--webbot
+        bot="HTMLMarkup" endspan --><font size="2">Mathematical
+        Security </font><a href="http://users.telenet.be/d.rijmenants/en/enigmatech.htm#top"><font size="2"><img src="./Enigma details_files/up1.gif" alt="Top" border="0" width="12" height="9"></font></a></h4>
+        <p><font size="2">To calculate the mathematical security
+        we have to find all possible different settings of the
+        machine. Therefore, we need to look at the following
+        properties of the machine: the selection and order of the
+        rotors, their wiring, the ring setting on each of the
+        rotors, the startposition of these rotors at the
+        beginning of the message, the reflector and the plugboard
+        settings. Now, there are different ways to calculate a
+        grand total of this. In </font><a href="http://www.nsa.gov/about/_files/cryptologic_heritage/publications/wwii/engima_cryptographic_mathematics.pdf" target="_blank"><font size="2">this NSA publication (pdf)</font></a><font size="2">, all possible variations of wiring in each of
+        the rotors and the reflector was included. This results
+        in an astronomical 3 x 10<sup>114</sup>. However, these
+        misleading figures represent all theoretically possible
+        variations of the machine.</font></p>
+        <p><font size="2">Unfortunately for the Germans, the
+        Allied codebreakers knew the machine, the rotors and the
+        internal wiring of these rotors. Therefore, they only had
+        to take in account the actual possible ways you could set
+        the machine, the actual key settings or key space. This
+        is what we call the practical security, which is far less
+        than the theoretical security in the case of Enigma. For
+        the German cryptologists, a single rotor could be wired
+        in 4 x 10<sup>26</sup> different ways. Combining three
+        rotors and a reflector quickly gives you astronomical
+        figures. For the Allied codebreakers, who knew the wring
+        of the rotors, there were only 26 different variations
+        for a single rotor, that is, the 26 positions it could
+        have in the machine. They didn't have to search through
+        the immense number of possible wirings. The German
+        cryptologists made a critical mistake by ignoring Auguste
+        Kerckhoff's law that the security of a device may never
+        depend on the secrecy of the system (i.e. rotor wiring,
+        design), which will be compromised sooner or later
+        anyhow, but only on the secrecy of the key (i.e. rotor
+        selection and plugboard). In the interesting </font><a href="http://findarticles.com/p/articles/mi_qa3926/is_200304/ai_n9181646/" target="_blank"><font size="2">R.A. Ratcliff paper</font></a><font size="2"> for Cryptologia you can read how dangerous it
+        is to rely on theoritical security.</font></p>
+        <p><font size="2">Let us look at all the things we can
+        actually set in the machine and are unknown to the
+        codebreaker. In our example, we take the three-rotor
+        Wehrmacht Enigma with default B reflector and selection
+        out of 5 rotors. We use 10 plug cables on the plugboard,
+        the default number of cables, issued with the machine
+        (don't ask me why they didn't provide 11 cables, which
+        gave far more possible combinations)</font></p>
+        <p><font size="2">To select 3 rotors out of a possible 5,
+        there are 60 combinations (5 x 4 x 3). Each rotor, in
+        other words its internal wiring, can be set in any of 26
+        positions. Therefore, with 3 rotors there are 17,576
+        different rotor positions (26 x 26 x 26). The ring on
+        each rotor holds the rotor labeling (which doesn't matter
+        here) and a notch that affects the stepping of the
+        next-left rotor. Each ring can be set in any of 26
+        positions. As there is no rotor to the left of the third
+        (most-left) rotor, only the rings of the most-right and
+        middle rotor affect the calculation. This gives 676 ring
+        combinations (26 x 26). With 10 plug cables you can wire
+        the plugboard in 150,738,274,937,250 different ways.</font></p>
+        <p><font size="2">In total, this gives: 60 x 17,576 x 676
+        x 150,738,274,937,250 = <strong>107,458,687,327,250,619,360,000</strong>
+        or <strong>1.07 x 10</strong><sup><strong>23</strong></sup></font></p>
+        <p><font size="2">So, in real life, the Wehrmacht Enigma
+        machine could be set in 1.07 x 10<sup>23</sup> different
+        ways, which is comparable with a 77 bit key.</font></p>
+        <p><font size="2">There are some comments we should add
+        to this number. In reality, the maximum period of the
+        rotors - the number of steps before the machine repeats
+        itself - is slightly less than 17,576. This is caused by
+        the double-step feature of the stepping mechanism. The
+        actual period depends on the type of rotor. The three
+        double-notched Naval rotors will have an even smaller
+        period than the Wehrmacht rotors as they produce more
+        double steps of the middle rotor. The maximum period
+        however is no part of the variables that can be set and
+        therefore do not influence the key space. The Wehrmacht
+        machine could be equipped with either the B or C
+        reflector. In general, radio nets always used the same
+        reflector, as the use of different reflectors created
+        logistical, procedural and practical problems. If
+        nonetheless taken in account, the choice between B and C
+        reflector would only double the key space.</font></p>
+        <p><font size="2">The adding of a fourth rotor for the
+        Naval Enigma M4 to improve its security was a nice but
+        useless addition. The non-moving fourth rotor complicated
+        the machine only by a factor 26 and, together with the
+        thin reflector, could be considered as a settable
+        reflector with 26 positions, of which the Allies quickly
+        found the wiring (after 10 months of panic). The
+        introduction of 8 naval rotors on the Kriegsmarine M3 and
+        later on the four-rotor M4 was a far better approach.
+        They increased the rotor combinations from 60 to 336, and
+        brought in additional complexity with 3 multiple notched
+        naval rotors VI VII and VIII. </font></p>
+        <p><font size="2">Let us now calculate the practical key
+        size of the four-rotor Kriegsmarine Enigma M4. This
+        machine uses 3 normal rotors, selected from a set of 8
+        (of which three with double notches). This gives 336
+        rotor combinations (8 x 7 x 6). The M4 also has a special
+        fourth rotor called Beta or Gamma (without a ring), which
+        gives us 2 choices. These are not compatible with the
+        other rotors and are only suitable as fourth (most left)
+        rotor. The 4 rotors can be set in any of 456,976
+        positions (26 x 26 x 26 x 26). The M4 had a smaller B or
+        C reflector, to enable the placement of the fourth rotor.
+        We don't include the choice of reflector as it was
+        generally never changed. Again, only two rings were
+        involved, as the third rotor didn't step the never moving
+        fourth rotor. The M4 was also issued with 10 plug cables.</font></p>
+        <p><font size="2">In total, this gives: 336 x 2 x 456,976
+        x 676 x 150,738,274,937,250 = <strong>31,291,969,749,695,380,357,632,000</strong>
+        or <strong>3.1 x 10</strong><sup><strong>25</strong></sup>,
+        comparable with a 84 bit key. </font></p>
+        <p><font size="2">This is about 291 times stronger than
+        the Wehrmacht machine. This is due to the increased
+        choice of rotors (already available on the M3 before the
+        war) and the possible initial positions for 4 rotors
+        instead of 3. However, although the fourth rotor did
+        increase the key size, it failed to add to the complexity
+        of the encryption itself, since it couldn't move during
+        the enciphering proccess. A better solution would have
+        been to completely re-wire some of the rotors on a
+        regular basis. A single variable rotor wiring would
+        multiply the key space with no less than 4 x 10<sup>26</sup>,
+        which is far more than a settable reflector with its 7.8
+        x 10<sup>12</sup> possible variations. A single
+        practical, daily changed, re-wireable rotor, which has 4
+        x 10<sup>26</sup> possible settings, would have been much
+        more effective than the overestimated daily not-moving
+        plugboard setting with only 2 x 10<sup>14</sup>
+        variations (the plugboard was always in pairs). The use
+        of such rotor, for instance in conjunction with a thin
+        M4-like reflector and two out of four normal rotors,
+        would be a true disaster for the codebreakers. However,
+        introducing re-wireable rotors during wartime would be
+        cumbersome and present a logistical and financial
+        nightmare, just as the rewireable D reflector proved to
+        be. Too little too late. The D reflector did scare the
+        codebreakers initially, until they realized that the D
+        reflector was used simultaniously with the default
+        reflectors in the same radio nets, due to practical
+        considerations. This dual use made it possible to break
+        it even by hand. More about the D reflector and other
+        attempts on the </font><a href="http://users.telenet.be/d.rijmenants/en/enigma.htm"><font size="2">Enigma history</font></a><font size="2"> page.</font></p>
+        <p><font size="2">Any crypto-expert would also discard
+        the 17,576 ring combinations. Even with completely wrong
+        ring settings, you will initially start with a correct
+        plain text. As soon as you get garbled text, you adjust
+        the ring of the most-right rotor (a 1/26 chance you're
+        right) and if you're lucky you have no more trouble for
+        the next 676 characters. If less lucky, you had to adjust
+        the ring of the middle rotor after 26 letters. All done
+        on-the-fly. Unfortunately for the Germans, the ingenious
+        Turing Bombe design, with mirrored identical rotor packs,
+        avoided the need to search through the immense number of
+        plugboard settings, taking a factor 2 x 10<sup>14</sup>
+        shortcut on the linking of their cribs (known piece of
+        plain and ciphertext) to a given rotor setting.</font></p>
+        <p><font size="2">Nonetheless, the breaking of Enigma
+        still was an enormous challenge with a key setting that
+        was extraordinary in the electro-mechanical era of those
+        days. With a practical key space of 1.07 x 10<sup>23</sup>,
+        an exhaustive search was impossible in the 1940's, and
+        its comparable 77 bit key is even huge for today's
+        computer standards. To give you an idea of the size of
+        that number, with 1.07 x 10<sup>23</sup> sheets of paper
+        (0.0039 inch each) you can build roughly 70,000,000
+        stacks of paper, each of them reaching from the Earth to
+        the Sun. Also, 1.07 x 10<sup>23</sup> inches equals
+        288,500 light-year. A pretty big number! The Germans were
+        correct in assuming that the Enigma was theoretically
+        unbreakable. However, codebreaking is more than keys
+        sizes and numbers, theoretical security and searching for
+        the right combination. More on the how the Allies broke
+        Enigma </font><a href="http://users.telenet.be/d.rijmenants/en/enigmauboats.htm"><font size="2">on
+        this page</font></a><font size="2">.</font></p>
+        <p><font size="2">All images copyrighted by D Rijmenants</font></p>
+        <p><a href="http://users.telenet.be/d.rijmenants/en/references.htm"><font size="2">References</font></a></p>
+        <p><a href="http://users.telenet.be/d.rijmenants/detalles_tecnicos_enigma.pdf" target="_blank"><font size="2">Detalles Technicos de la
+        Maquina Enigma (pdf)</font></a><font size="2"> This page
+        translated to Spanish by Rafael Padilla</font></p>
+        <p><!-- Start of StatCounter Code --><script language="javascript" type="text/javascript">
+<!-- 
+var sc_project=949122; 
+var sc_invisible=1; 
+var sc_partition=7; 
+var sc_security="80e5009e"; 
+//-->
+</script>
+        <script language="javascript" type="text/javascript" src="./Enigma details_files/counter.js"></script><noscript>&lt;a
+        href="http://www.statcounter.com/" target="_blank"&gt;&lt;img
+        src="http://c8.statcounter.com/counter.php?sc_project=949122&amp;amp;java=0&amp;amp;security=80e5009e&amp;amp;invisible=1"
+        alt="website hit counter" border="0"&gt;&lt;/a&gt; </noscript> <!-- End of StatCounter Code --> <!--webbot
+        bot="HTMLMarkup" startspan --><img src="./Enigma details_files/yaac" style="visibility:hidden"><!--webbot
+        bot="HTMLMarkup" endspan --></p>
+        <table border="0" cellpadding="2" cellspacing="0" width="100%">
+            <tbody><tr>
+                <td width="100%" bgcolor="#808080"><a href="http://users.telenet.be/d.rijmenants/index.htm" class="menu">Home</a> <a href="http://users.telenet.be/d.rijmenants/en/enigmamenu.htm" class="menu">Menu</a> <a href="http://users.telenet.be/d.rijmenants/en/enigma.htm" class="menu">History</a> <a href="http://users.telenet.be/d.rijmenants/en/enigmaproc.htm" class="menu">Procedures</a>
+                <a href="./Enigma details_files/Enigma details.htm" class="menu">Technical
+                details</a> <a href="http://users.telenet.be/d.rijmenants/en/enigmasim.htm" class="menu">Enigma Simulator</a></td>
+            </tr>
+        </tbody></table>
+        </td>
+    </tr>
+</tbody></table>
+</center></div>
+
+
+</body></html>

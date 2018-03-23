@@ -1,0 +1,3 @@
+1：The Key is XDCTF{Congra_tUlat$eyOu}
+2：加了两个反调试，花指令
+2: 加密了main函数部分指令，干扰静态分析

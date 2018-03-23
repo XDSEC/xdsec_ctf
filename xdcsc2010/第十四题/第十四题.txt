@@ -1,0 +1,13 @@
+由于你的帮助，Bob终于约到了mm，很快他们就恋爱了。可是难题也来了，mm是信息安全的高才生，喜欢破译密码，而Bob却一窍不通，这不，早上mm发来邮件，邮件内容很是奇怪：：
+
+Hill2密文：
+WABGNLCQECJESSHHUYIQPMWTALDYJRRMHYIDCOUPYHETJSJVAKCDUCETHHWWALXHLQVMYGTVXIZIUCOCAMPKALCQLPKSSROOVKJFYOXEALHHYGBZALGWPMURHHANMRKAWULPHHSSETJSJVAKCDUCEBIXRKWFCQPMBZDOCDUCAZURHHSNEHUQKAEMFYGFIXFICDRKSMPMHHOMTUXATZYPQKDJURUQFMRB
+
+Bob看着邮件，一脸无奈，但是为了爱情，Bob决定从下个星期开始，好好学习，天天破密。可是眼下该怎么办呢，于是他又找到了你
+
+说明：请给出该密文对应的解密矩阵（要求是破译出来的文章能够表达具体的意思）
+格式如下，如果该矩阵为
+k=|11 22|
+  |33 44|
+那么答案写为11223344，将数字从左向右，从上到下连接即可
+请写清楚过程，答案不一定要对，看破译方法    

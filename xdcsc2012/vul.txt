@@ -1,0 +1,161 @@
+西电第三届网络攻防大赛线上赛脚本渗透题目参考分析
+第一关
+保存网页查看源码即可得到key的16进制，\4B\65\79\3A\66\31\72\73\54\50\61\35\73\6B\65\79，进而得到key:f1rsTPa5skey
+第二关
+提示You Have Logged in，查看cookie，得到KeyHere!的值为decode(ZzBOZXhUZG8wcm==），Base64解密得到key:g0NexTdo0r
+第三关
+php脚本判断客户端浏览器语言，$_SERVER['HTTP_ACCEPT_LANGUAGE']，修改http包头language首字母为en即可。
+第四关
+考察不严密的后台验证方式，提示未登录，修改cookie中admin值使其不为0即可得到key。
+第五关
+源码中有提示给出字典文件，暴力破解即可log in，得到key。
+第六关
+提示Asp+Access，知为mdb数据库，下载之，给出提示conn.inc，扫描目录发现config和data两个目录。在config目录下成功访问到conn.inc，显示数据库地址，其中#更换为%23下载，使用mdb查看工具即可得到key。
+第七关
+给出
++ADwAcwBjAHIAaQBwAHQAPgB3AGkAbgBkAG8AdwAuAGwAbwBjAGEAdABpAG8AbgAuAGgAcgBlAGYAPQAiAHUAdABmAC0ANwAuAHAAaABwACIAPAAvAHMAYwByAGkAcAB0AD4-
+提示xss，知为UTF-7加密的跨站语句，解密得到一文件地址，utf-7.php
+访问发现无权限，回到index.php查看有如下提示
+<!--Tip:Ref:http://xdsec.org/-->
+即访问utf-7时修改Refference为http://xdsec.org即可得到key
+第八关
+给出LM-HASH
+h4cker:1004:C4FB857DAAF137F088BE239044A684C5:4708EEA5CCA17F195EE8EACA40153F5B:::
+用ophcrack等工具破解即可得到key
+第九关
+后台绕过验证，给出提示，按照提示闭合语句即可
+给出一种构造方案：
+用户名admin' or '1'='1'or' 密码：123
+登陆成功后查看源码得到第九关key
+第十关
+考察注入知识，默认过滤了小写的大部分sql关键字，只需大小写搭配即可绕过
+依次构造如下
+1' unioN selecT 1,2-- 显示成功，两个字段
+1' unIon sElect 1,Database()--  当前数据库名称为goal
+1' uNion sElect 1,group_concat(TABLE_NAME) From information_schema.TABLES wherE  TABLE_SCHEMa=0x676F616C-- 得到表明users
+1' uNion sElect 1,group_concat(COLUMN_NAME) From information_schema.COLUMNS wherE  TABLE_NAME=0x7573657273-- 
+得到字段名user_id,first_name,last_name,user,password,avatar
+题目要求得到admin的密码
+1' uNion sElect 1,password fRom users Where user="admin"-- 
+得到MD5密码f22ca56a0ec7c022b3a20ec06271a93b
+解密得到n1md4
+十一关
+一个简单的上传绕过
+可以依赖火狐浏览器或Burp等工具修改包，将上传的jpg文件后缀改为php，即可得到key。
+亦可直接上传php文件，修改concent-type为image/jpeg
+=-=-=-=-=-=-=-=-=-=
+西电第三届网络攻防大赛线上赛破解题目参考分析
+第一关
+一个图片文件，使用WinHex可查看文件末有RAR标志，解压得到图片文件即为key。
+第二关
+使用C#编写的一个简单程序，考察.Net程序文件的简单分析，Key的查找，用ildasm即可轻松得到key
+第三关：
+程序由C++编写，验证方式
+if (Base64_en(Base64_en(Base64_en(input)))=="...")
+字符串参考可得到加密后的值，解密后验证需使用程序禁用了的Reg按钮，可修改资源文件突破
+考察方向：基本算法如Base64了解，程序资源修改
+第四关：
+C++编写，注册机模式
+要求使用xdsec为用户名，得到注册码。
+程序使用简单压缩壳PECompact2.x加壳处理，并做隐藏程序字符串参考。
+脱壳可参照网上方案等手工解决，字符串参考被隐藏，可通过OD的Ctrl+N查看调用函数进行跟踪。
+其中，算法部分使用仿射密码，验证为通过xor逐次异或判断。
+破解方案：
+1、OD动态调试
+2、IDA伪代码生成分析
+第五关：
+Linux下的ELF可执行程序，验证方式为简单的password验证。
+需了解使用linux下的逆向工具，如strings、strace、gdb及ELF文件与Linux系统相关知识
+程序添加UPX壳，在linux下使用upx -d脱壳后分析。
+Linux下动态调试程序按个人喜好，有字符串参考，也可放入IDA中分析。
+掌握Linux下基本分析方法后相对容易。
+第六关:
+程序未加壳，添加数种反调试、字符串隐藏等实现基本的反跟踪。
+验证方式，注册机模式。注，程序基址不断变化，故如下截图仅供参考。
+PEID加载，无壳，使用插件Krypto分析，发现算法Base64，DES及MD5
+BASE64 table :: 000043F0 :: 004051F0
+DES [pbox] [char] :: 00004838 :: 00405638
+MD5 :: 00001E58 :: 00402A58
+首先，载入普通OD，自动退出，可猜想使用TLS反调试。
+使用修改版OD载入，停在TLS函数入口处。修改跳转跳过反调试。如图
+保存文件使用Ollyice继续分析，此时已跳转过tls反调试
+接下来运行，程序为建立新线程。一线程循环检测有无调试，一线程为验证线程。可通过Ctrl+N，在Std::cin上下断点。
+双击断点，在函数头下断，F9运行。中断后单步跟踪。
+中途分析中可能会遇到多个反调试，需一一绕过。
+XDCSC2012对应MD5值为9bda49408e7b00c3d4021e384de709b2
+对用户名的处理，寄存器可看到d4021e38.为取用户名ASCII码第17-24位。
+用户名处理后是一个字符串xor解密过程，以在程序中显示“password:”
+输入密码单步跟踪后有反调试，会屏蔽输入。重启OD，把Call给nop掉，跳过此处的反调试。
+重新走到密码处，输入假码1234。
+而后发现四次调用一个函数解密，猜想为Base64解密（可通过调用前面插件提及的Base64地址证明，但由于基址变化，需做适当运算，也可单步跟踪分析得知）。
+跟踪发现BASE64四次解密后取空MD5d41d8cd98f00b204e9800998ecf8427的9-16位8f00b204。
+即应该取someof(MD5(Base64DE^4(key))
+接着进入DES加密函数内
+如图，跟踪得到寄存器EAX显示B13:5GG0EF47A7F@，是异或加密的结果，解密得到A2096DD3FE74B4EC
+已知如上信息，猜想可知。
+算法:
+if DESen(someof(md5(name)),someof(MD5(Base64DE^4(key))))==A2096DD3FE74B4EC
+其中d4021e38可能为DES中的密钥，也可能为明文信息。
+已知题目给出关键参量不大于两个字符。故Key为四次Base64加密后结果。
+有如下程序进行破解。
+// experience.cpp : 定义控制台应用程序的入口点。
+#include "stdafx.h"
+#include "windows.h"
+#include "iostream"
+#include"tlhelp32.h"
+#include "winnt.h"
+#include "des.h"
+#include "md5.h"
+#include "base64.h"
+int compare(char *name,char *pass);
+
+//主函数
+int main()
+{
+	char pass[40];
+	char name[20];
+	char enpass[40];
+	char md5name[8];
+	char md5pass[8];
+	std::cout<<"Name:"<<std::endl;
+	std::cin>>name;
+	strncpy(md5name,md5(name).substr(16,8).c_str(),8);
+	md5name[8]='\0';
+	FILE *fp;
+    fp=fopen("pass.lst","r");
+	while (!feof(fp))
+     {
+	fscanf(fp,"%s",pass);
+	strncpy(md5pass,md5(pass).substr(8,8).c_str(),8);
+	md5pass[8]='\0';
+	if (compare(md5pass,md5name))
+		{
+				std::cout<<"[+]IV found!"<<std::endl<<pass<<std::endl<<"You can encode iv to get key!"<<std::endl;
+				system("pause");
+	}
+	if (compare(md5name,md5pass))
+		{
+				std::cout<<"[+]IV found!"<<std::endl<<pass<<std::endl<<"You can encode iv to get key!"<<std::endl;
+				system("pause");
+		}
+	std::cout<<"[+]key testing...[+]"<<std::endl;
+	 }
+	return 0;
+}
+
+//Compare
+int compare(char *name,char *pass)
+{
+	yxyDES2* my_des = new yxyDES2();
+	//set key
+	my_des->InitializeKey(name,0);
+	//encrypt
+	my_des->EncryptData(pass,0);
+	char key[]="A2096DD3FE74B4EC";
+	if (!strcmp(my_des->GetCiphertextInHex(),key))
+	return 1;
+	else 
+	return 0;
+}
+破解得到参量为7t，进行四次Base64加密后为VkdwT1VsQlJQVDA9
+注册成功

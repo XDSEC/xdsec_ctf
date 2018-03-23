@@ -1,0 +1,43 @@
+body
+{
+font: small tahoma, arial, veranda, 'sans serif'; 
+font-size:100%
+}
+
+
+p,table,li,ul
+{
+font-family: small tahoma, arial, veranda, 'sans serif'; 
+}
+
+h1,h2,h3,h4,h5,h6
+{
+font-family: small tahoma, arial, veranda, 'sans serif'; 
+color: darkslategray;
+}
+
+ul
+{
+font-family: small tahoma, arial, veranda, 'sans serif'; 
+list-style: square;
+}
+
+a:link    {text-decoration:underline;font-weight: bold; color: #000033}
+a:visited {text-decoration:underline;font-weight: bold; color: #778899}
+a:active {text-decoration:underline;font-weight: bold; color: dimgray}
+a:hover   {text-decoration:underline;font-weight: bold; color: blue}
+
+a.menu:link {font-size:90%;text-decoration:none;color:white; background:gray;width:130px;padding:0.1em 0.2em; font-weight:normal}
+a.menu:visited {font-size:90%;text-decoration:none;color:white; background:gray;width:130px;padding:0.1em 0.2em; font-weight:normal}
+a.menu:active {font-size:90%;text-decoration:none;color:white; background:gray;width:130px;padding:0.1em 0.2em; font-weight:normal}
+a.menu:hover {font-size:90%;ftext-decoration:none;color:darkslategray; background:white;width:130px;padding:0.1em 0.2em; font-weight:normal}
+
+a.menu-sized:link {font-size:90%;text-decoration:none;color:white; background:gray;padding:0.1em 0.2em; font-weight:normal}
+a.menu-sized:visited {font-size:90%;text-decoration:none;color:white; background:gray;padding:0.1em 0.2em; font-weight:normal}
+a.menu-sized:active {font-size:90%;text-decoration:none;color:white; background:gray;padding:0.1em 0.2em; font-weight:normal}
+a.menu-sized:hover {font-size:90%;ftext-decoration:none;color:darkslategray; background:white;padding:0.1em 0.2em; font-weight:normal}
+
+a.menu-index:link {font-size:90%; text-decoration:none;color:dimgray; font-weight: normal; color:gray }
+a.menu-index:visited {font-size:90%;text-decoration:none;color:dimgray; font-weight: normal; color:gray }
+a.menu-index:active {font-size:90%;text-decoration:none;color:dimgray; font-weight: normal; color:gray }
+a.menu-index:hover {font-size:90%;text-decoration:underline;color:dimgray; font-weight: normal; color:gray }

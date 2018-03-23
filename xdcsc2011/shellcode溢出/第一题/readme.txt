@@ -1,0 +1,1 @@
+说明：本题要求写出一个通用shellcode（能在win7，xp等下运行）。shellcode的功能是：添加用户: wlgfds(管理员权限),密码：wlgfds。shellcode中不能包含“\x90”字符。(4分)

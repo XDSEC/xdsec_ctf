@@ -1,0 +1,4 @@
+g++ -Wall -lssl -lcrypto keygen.cpp -o keygen /usr/lib/x86_64-linux-gnu/libcrypto.a
+
+B19CE1D3A9570C474BA6B32F0D2E93FA
+1374172098847EEE5A9359EAF28D0682970BB701CAF237F3  
